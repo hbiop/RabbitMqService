@@ -1,0 +1,11 @@
+D:\need\RabbitMqService\RabbitMqService.App\bin\Debug\net8.0\RabbitMqService.App.deps.json
+D:\need\RabbitMqService\RabbitMqService.App\bin\Debug\net8.0\RabbitMqService.App.dll
+D:\need\RabbitMqService\RabbitMqService.App\bin\Debug\net8.0\RabbitMqService.App.pdb
+D:\need\RabbitMqService\RabbitMqService.App\obj\Debug\net8.0\RabbitMqService.App.GeneratedMSBuildEditorConfig.editorconfig
+D:\need\RabbitMqService\RabbitMqService.App\obj\Debug\net8.0\RabbitMqService.App.AssemblyInfoInputs.cache
+D:\need\RabbitMqService\RabbitMqService.App\obj\Debug\net8.0\RabbitMqService.App.AssemblyInfo.cs
+D:\need\RabbitMqService\RabbitMqService.App\obj\Debug\net8.0\RabbitMqService.App.csproj.CoreCompileInputs.cache
+D:\need\RabbitMqService\RabbitMqService.App\obj\Debug\net8.0\RabbitMqService.App.dll
+D:\need\RabbitMqService\RabbitMqService.App\obj\Debug\net8.0\refint\RabbitMqService.App.dll
+D:\need\RabbitMqService\RabbitMqService.App\obj\Debug\net8.0\RabbitMqService.App.pdb
+D:\need\RabbitMqService\RabbitMqService.App\obj\Debug\net8.0\ref\RabbitMqService.App.dll

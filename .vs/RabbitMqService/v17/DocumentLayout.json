@@ -1,0 +1,160 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\need\\RabbitMqService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{185855E8-B347-40A4-91A1-23FB8E817C69}|RabbitMqServiceView\\RabbitMqServiceView.csproj|d:\\need\\rabbitmqservice\\rabbitmqserviceview\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{185855E8-B347-40A4-91A1-23FB8E817C69}|RabbitMqServiceView\\RabbitMqServiceView.csproj|solutionrelative:rabbitmqserviceview\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{185855E8-B347-40A4-91A1-23FB8E817C69}|RabbitMqServiceView\\RabbitMqServiceView.csproj|d:\\need\\rabbitmqservice\\rabbitmqserviceview\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{185855E8-B347-40A4-91A1-23FB8E817C69}|RabbitMqServiceView\\RabbitMqServiceView.csproj|solutionrelative:rabbitmqserviceview\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{185855E8-B347-40A4-91A1-23FB8E817C69}|RabbitMqServiceView\\RabbitMqServiceView.csproj|d:\\need\\rabbitmqservice\\rabbitmqserviceview\\controllers\\messagebrokercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{185855E8-B347-40A4-91A1-23FB8E817C69}|RabbitMqServiceView\\RabbitMqServiceView.csproj|solutionrelative:rabbitmqserviceview\\controllers\\messagebrokercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37319AE7-AA89-41FE-835F-B5E1A4BBDE81}|RabbitMqService.Infrastructure\\RabbitMqService.Infrastructure.csproj|d:\\need\\rabbitmqservice\\rabbitmqservice.infrastructure\\rabbitmq\\rabbitmqproducer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37319AE7-AA89-41FE-835F-B5E1A4BBDE81}|RabbitMqService.Infrastructure\\RabbitMqService.Infrastructure.csproj|solutionrelative:rabbitmqservice.infrastructure\\rabbitmq\\rabbitmqproducer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37319AE7-AA89-41FE-835F-B5E1A4BBDE81}|RabbitMqService.Infrastructure\\RabbitMqService.Infrastructure.csproj|d:\\need\\rabbitmqservice\\rabbitmqservice.infrastructure\\rabbitmq\\rabbitmqconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37319AE7-AA89-41FE-835F-B5E1A4BBDE81}|RabbitMqService.Infrastructure\\RabbitMqService.Infrastructure.csproj|solutionrelative:rabbitmqservice.infrastructure\\rabbitmq\\rabbitmqconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5169C63E-5825-4402-B758-2F055567D519}|RabbitMqService.App\\RabbitMqService.App.csproj|d:\\need\\rabbitmqservice\\rabbitmqservice.app\\abstractions\\iproducer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5169C63E-5825-4402-B758-2F055567D519}|RabbitMqService.App\\RabbitMqService.App.csproj|solutionrelative:rabbitmqservice.app\\abstractions\\iproducer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5169C63E-5825-4402-B758-2F055567D519}|RabbitMqService.App\\RabbitMqService.App.csproj|d:\\need\\rabbitmqservice\\rabbitmqservice.app\\abstractions\\iconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5169C63E-5825-4402-B758-2F055567D519}|RabbitMqService.App\\RabbitMqService.App.csproj|solutionrelative:rabbitmqservice.app\\abstractions\\iconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{185855E8-B347-40A4-91A1-23FB8E817C69}|RabbitMqServiceView\\RabbitMqServiceView.csproj|d:\\need\\rabbitmqservice\\rabbitmqserviceview\\rabbitmqserviceview.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{185855E8-B347-40A4-91A1-23FB8E817C69}|RabbitMqServiceView\\RabbitMqServiceView.csproj|solutionrelative:rabbitmqserviceview\\rabbitmqserviceview.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1271524308:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\need\\RabbitMqService\\RabbitMqServiceView\\appsettings.json",
+              "RelativeDocumentMoniker": "RabbitMqServiceView\\appsettings.json",
+              "ToolTip": "D:\\need\\RabbitMqService\\RabbitMqServiceView\\appsettings.json",
+              "RelativeToolTip": "RabbitMqServiceView\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-10T21:54:12.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\need\\RabbitMqService\\RabbitMqServiceView\\Program.cs",
+              "RelativeDocumentMoniker": "RabbitMqServiceView\\Program.cs",
+              "ToolTip": "D:\\need\\RabbitMqService\\RabbitMqServiceView\\Program.cs",
+              "RelativeToolTip": "RabbitMqServiceView\\Program.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T21:49:45.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MessageBrokerController.cs",
+              "DocumentMoniker": "D:\\need\\RabbitMqService\\RabbitMqServiceView\\Controllers\\MessageBrokerController.cs",
+              "RelativeDocumentMoniker": "RabbitMqServiceView\\Controllers\\MessageBrokerController.cs",
+              "ToolTip": "D:\\need\\RabbitMqService\\RabbitMqServiceView\\Controllers\\MessageBrokerController.cs",
+              "RelativeToolTip": "RabbitMqServiceView\\Controllers\\MessageBrokerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T21:47:42.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RabbitMqServiceView",
+              "DocumentMoniker": "D:\\need\\RabbitMqService\\RabbitMqServiceView\\RabbitMqServiceView.csproj",
+              "RelativeDocumentMoniker": "RabbitMqServiceView\\RabbitMqServiceView.csproj",
+              "ToolTip": "D:\\need\\RabbitMqService\\RabbitMqServiceView\\RabbitMqServiceView.csproj",
+              "RelativeToolTip": "RabbitMqServiceView\\RabbitMqServiceView.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-10T21:40:56.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RabbitMqConsumer.cs",
+              "DocumentMoniker": "D:\\need\\RabbitMqService\\RabbitMqService.Infrastructure\\RabbitMq\\RabbitMqConsumer.cs",
+              "RelativeDocumentMoniker": "RabbitMqService.Infrastructure\\RabbitMq\\RabbitMqConsumer.cs",
+              "ToolTip": "D:\\need\\RabbitMqService\\RabbitMqService.Infrastructure\\RabbitMq\\RabbitMqConsumer.cs",
+              "RelativeToolTip": "RabbitMqService.Infrastructure\\RabbitMq\\RabbitMqConsumer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T21:44:01.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RabbitMqProducer.cs",
+              "DocumentMoniker": "D:\\need\\RabbitMqService\\RabbitMqService.Infrastructure\\RabbitMq\\RabbitMqProducer.cs",
+              "RelativeDocumentMoniker": "RabbitMqService.Infrastructure\\RabbitMq\\RabbitMqProducer.cs",
+              "ToolTip": "D:\\need\\RabbitMqService\\RabbitMqService.Infrastructure\\RabbitMq\\RabbitMqProducer.cs",
+              "RelativeToolTip": "RabbitMqService.Infrastructure\\RabbitMq\\RabbitMqProducer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T21:43:46.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IProducer.cs",
+              "DocumentMoniker": "D:\\need\\RabbitMqService\\RabbitMqService.App\\Abstractions\\IProducer.cs",
+              "RelativeDocumentMoniker": "RabbitMqService.App\\Abstractions\\IProducer.cs",
+              "ToolTip": "D:\\need\\RabbitMqService\\RabbitMqService.App\\Abstractions\\IProducer.cs",
+              "RelativeToolTip": "RabbitMqService.App\\Abstractions\\IProducer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T21:42:47.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IConsumer.cs",
+              "DocumentMoniker": "D:\\need\\RabbitMqService\\RabbitMqService.App\\Abstractions\\IConsumer.cs",
+              "RelativeDocumentMoniker": "RabbitMqService.App\\Abstractions\\IConsumer.cs",
+              "ToolTip": "D:\\need\\RabbitMqService\\RabbitMqService.App\\Abstractions\\IConsumer.cs",
+              "RelativeToolTip": "RabbitMqService.App\\Abstractions\\IConsumer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T21:42:10.419Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

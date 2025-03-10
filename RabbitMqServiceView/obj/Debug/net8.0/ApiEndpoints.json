@@ -1,0 +1,59 @@
+[
+  {
+    "ContainingType": "RabbitMqServiceView.Controllers.MessageBrokerController",
+    "Method": "GetMessage",
+    "RelativePath": "MessageBroker/GetMessage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "exchangeName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "routingKey",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "queueName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RabbitMqServiceView.Controllers.MessageBrokerController",
+    "Method": "SendMessage",
+    "RelativePath": "MessageBroker/SendMessage",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "message",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "exchangeName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "routingKey",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "queueName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

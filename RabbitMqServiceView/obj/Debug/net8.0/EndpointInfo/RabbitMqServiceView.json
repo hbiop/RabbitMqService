@@ -1,0 +1,93 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "My API",
+    "version": "v1"
+  },
+  "paths": {
+    "/MessageBroker/SendMessage": {
+      "post": {
+        "tags": [
+          "MessageBroker"
+        ],
+        "parameters": [
+          {
+            "name": "message",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "exchangeName",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "Default Exchange"
+            }
+          },
+          {
+            "name": "routingKey",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "Default Routing Key"
+            }
+          },
+          {
+            "name": "queueName",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "Default Queue"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/MessageBroker/GetMessage": {
+      "get": {
+        "tags": [
+          "MessageBroker"
+        ],
+        "parameters": [
+          {
+            "name": "exchangeName",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "Default Exchange"
+            }
+          },
+          {
+            "name": "routingKey",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "Default Routing Key"
+            }
+          },
+          {
+            "name": "queueName",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "Default Queue"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

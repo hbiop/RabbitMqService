@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "qmxD9lxoAo+D+rs8N+OBcTd+24X0G/7PTTZFr4/xJnE=",
+  "Source": "RabbitMqServiceView",
+  "BasePath": "_content/RabbitMqServiceView",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
