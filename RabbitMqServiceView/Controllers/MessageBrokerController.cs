@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RabbitMqService.App.Abstractions;
+using RabbitMqService.Domain.models;
 using Serilog;
 
 namespace RabbitMqServiceView.Controllers
@@ -19,11 +20,11 @@ namespace RabbitMqServiceView.Controllers
             return Ok(result);
         }
 
-        [HttpGet]
-        public IActionResult GetMessage(string exchangeName = "Default Exchange", string routingKey = "Default Routing Key", string queueName = "Default Queue")
+        [HttpPost]
+        public IActionResult GetMessage([FromBody] GetMessagesModel getMessages,string queueName = "default", int count=1)
         {
-            var result = _consumer.GetMessage(exchangeName, routingKey, queueName).Result;
-            Log.Information(result);
+            var result = _consumer.GetMessage(queueName, getMessages.Login, getMessages.Password, count).Result;
+            //Log.Information(result);
             return Ok(result);
         }
     }

@@ -7,14 +7,30 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {
       "RabbitMqService.App/1.0.0": {
+        "dependencies": {
+          "RabbitMqService.Domain": "1.0.0"
+        },
         "runtime": {
           "RabbitMqService.App.dll": {}
+        }
+      },
+      "RabbitMqService.Domain/1.0.0": {
+        "runtime": {
+          "RabbitMqService.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
   },
   "libraries": {
     "RabbitMqService.App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RabbitMqService.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

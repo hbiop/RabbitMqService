@@ -3,23 +3,23 @@
     "ContainingType": "RabbitMqServiceView.Controllers.MessageBrokerController",
     "Method": "GetMessage",
     "RelativePath": "MessageBroker/GetMessage",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "exchangeName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "routingKey",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "getMessages",
+        "Type": "RabbitMqService.Domain.models.GetMessagesModel",
+        "IsRequired": true
       },
       {
         "Name": "queueName",
         "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "count",
+        "Type": "System.Int32",
         "IsRequired": false
       }
     ],

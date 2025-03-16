@@ -65,3 +65,11 @@ D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\RabbitMqService.Inf
 D:\need\RabbitMqService\RabbitMqServiceView\obj\Debug\net8.0\RabbitMqServiceView.csproj.AssemblyReference.cache
 D:\need\RabbitMqService\RabbitMqServiceView\obj\Debug\net8.0\RabbitMqServiceView.MvcApplicationPartsAssemblyInfo.cs
 D:\need\RabbitMqService\RabbitMqServiceView\obj\Debug\net8.0\RabbitMq.00177EC0.Up2Date
+D:\need\RabbitMqService\RabbitMqServiceView\obj\Debug\net8.0\RabbitMqServiceView.sourcelink.json
+D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.dll
+D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\Microsoft.Extensions.Http.dll
+D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\RabbitMqService.Domain.dll
+D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\RabbitMqService.Domain.pdb
+D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\Newtonsoft.Json.dll

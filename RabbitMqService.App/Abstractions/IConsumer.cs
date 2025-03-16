@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RabbitMqService.Domain.models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace RabbitMqService.App.Abstractions
 {
     public interface IConsumer
     {
-        Task<string> GetMessage(string exchangeName, string routingKey, string queueName);
+        Task<GetMessagesReturnModel> GetMessage(string queueName, string login, string password, int count);
     }
 }

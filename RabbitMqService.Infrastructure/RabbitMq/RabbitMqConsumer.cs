@@ -1,9 +1,15 @@
-﻿using RabbitMQ.Client;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using RabbitMqService.App.Abstractions;
+using RabbitMqService.Domain.models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,48 +17,43 @@ namespace RabbitMqService.Infrastructure.RabbitMq
 {
     public class RabbitMqConsumer : IConsumer
     {
-        private readonly IConnectionFactory _connectionFactory;
-        private IConnection _connection;
-        private IChannel _channel;
-        public RabbitMqConsumer(IConnectionFactory connectionFactory)
+        private readonly HttpClient _httpClient;
+
+        public RabbitMqConsumer(IHttpClientFactory httpClientFactory)
         {
-            _connectionFactory = connectionFactory;
+            _httpClient = httpClientFactory.CreateClient("RmqHttpClient");
         }
-        public async Task<string> GetMessage(string exchangeName, string routingKey, string queueName)
+        public async Task<GetMessagesReturnModel> GetMessage(string queueName, string login, string password, int count)
         {
-            try
+            var url = $"/api/queues/%2F/{Uri.EscapeDataString(queueName)}/get";
+            var requestData = new
             {
-                await using (_connection = await _connectionFactory.CreateConnectionAsync())
+                count,
+                requeue = true,
+                ackmode = "ack_requeue_false",
+                encoding = "auto",
+            };
+            string _basicAuthHeader = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{login}:{password}"));
+            string json = JsonConvert.SerializeObject(requestData);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            _httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Basic", _basicAuthHeader);
+
+            var response = await _httpClient.PostAsync(url, content);
+            response.EnsureSuccessStatusCode();
+            var responseContent = await response.Content.ReadAsStringAsync();
+            var jsonObject = JArray.Parse(responseContent);
+            List<string> messages = new List<string>();
+            foreach(var i in jsonObject)
+            {
+                var payload = i["payload"]?.Value<string>();
+                if (payload != null)
                 {
-                    await using (_channel = await _connection.CreateChannelAsync())
-                    {
-                        await _channel.ExchangeDeclareAsync(exchangeName, ExchangeType.Direct);
-                        await _channel.QueueDeclareAsync(queueName, false, false, false);
-                        await _channel.QueueBindAsync(queueName, exchangeName, routingKey);
-                        await _channel.BasicQosAsync(0, 1, false);
-                        var consumer = new AsyncEventingBasicConsumer(_channel);
-                        var eventHandler = new TaskCompletionSource<string>();
-                        consumer.ReceivedAsync += async (ch, ea) =>
-                        {
-                            var body = ea.Body.ToArray();
-                            eventHandler.SetResult(Encoding.UTF8.GetString(body));
-                            await _channel.BasicAckAsync(ea.DeliveryTag, false);
-                        };
-                        string consumerTag = await _channel.BasicConsumeAsync(queueName, false, consumer);
-                        if (!eventHandler.Task.Wait(10000))
-                        {
-                            return "Время ожидания сообщения истекло.";
-                        }
-                        var result = await eventHandler.Task;
-                        await _channel.BasicCancelAsync(consumerTag);
-                        return result;
-                    }
+                    messages.Add(payload);
                 }
             }
-            catch (Exception e)
-            {
-                return "Произошла ошибка при отправке сообщения";
-            }
+            return new GetMessagesReturnModel(messages);
         }
     }
 }

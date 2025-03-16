@@ -13,3 +13,6 @@ D:\need\RabbitMqService\RabbitMqService.Infrastructure\obj\Debug\net8.0\RabbitMq
 D:\need\RabbitMqService\RabbitMqService.Infrastructure\obj\Debug\net8.0\refint\RabbitMqService.Infrastructure.dll
 D:\need\RabbitMqService\RabbitMqService.Infrastructure\obj\Debug\net8.0\RabbitMqService.Infrastructure.pdb
 D:\need\RabbitMqService\RabbitMqService.Infrastructure\obj\Debug\net8.0\ref\RabbitMqService.Infrastructure.dll
+D:\need\RabbitMqService\RabbitMqService.Infrastructure\obj\Debug\net8.0\RabbitMqService.Infrastructure.sourcelink.json
+D:\need\RabbitMqService\RabbitMqService.Infrastructure\bin\Debug\net8.0\RabbitMqService.Domain.dll
+D:\need\RabbitMqService\RabbitMqService.Infrastructure\bin\Debug\net8.0\RabbitMqService.Domain.pdb

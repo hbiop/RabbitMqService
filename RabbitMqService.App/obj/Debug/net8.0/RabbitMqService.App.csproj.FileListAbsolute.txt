@@ -9,3 +9,8 @@ D:\need\RabbitMqService\RabbitMqService.App\obj\Debug\net8.0\RabbitMqService.App
 D:\need\RabbitMqService\RabbitMqService.App\obj\Debug\net8.0\refint\RabbitMqService.App.dll
 D:\need\RabbitMqService\RabbitMqService.App\obj\Debug\net8.0\RabbitMqService.App.pdb
 D:\need\RabbitMqService\RabbitMqService.App\obj\Debug\net8.0\ref\RabbitMqService.App.dll
+D:\need\RabbitMqService\RabbitMqService.App\obj\Debug\net8.0\RabbitMqService.App.sourcelink.json
+D:\need\RabbitMqService\RabbitMqService.App\bin\Debug\net8.0\RabbitMqService.Domain.dll
+D:\need\RabbitMqService\RabbitMqService.App\bin\Debug\net8.0\RabbitMqService.Domain.pdb
+D:\need\RabbitMqService\RabbitMqService.App\obj\Debug\net8.0\RabbitMqService.App.csproj.AssemblyReference.cache
+D:\need\RabbitMqService\RabbitMqService.App\obj\Debug\net8.0\RabbitMq.B454C6CA.Up2Date

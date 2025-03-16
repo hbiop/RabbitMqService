@@ -51,36 +51,48 @@
       }
     },
     "/MessageBroker/GetMessage": {
-      "get": {
+      "post": {
         "tags": [
           "MessageBroker"
         ],
         "parameters": [
           {
-            "name": "exchangeName",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "default": "Default Exchange"
-            }
-          },
-          {
-            "name": "routingKey",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "default": "Default Routing Key"
-            }
-          },
-          {
             "name": "queueName",
             "in": "query",
             "schema": {
               "type": "string",
-              "default": "Default Queue"
+              "default": "default"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetMessagesModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetMessagesModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetMessagesModel"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -89,5 +101,22 @@
       }
     }
   },
-  "components": { }
+  "components": {
+    "schemas": {
+      "GetMessagesModel": {
+        "type": "object",
+        "properties": {
+          "login": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
 }

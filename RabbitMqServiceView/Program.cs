@@ -7,7 +7,13 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
-
+builder.Services.AddHttpClient("RmqHttpClient", client =>
+{
+    string? connectionString = builder.Configuration.GetConnectionString("RabbitMQApi");
+    client.BaseAddress = connectionString != null 
+    ? new Uri(connectionString) 
+    : throw new Exception("Строка подключения к Api RabbitMQ не найдена");
+});
 builder.Services.AddSingleton<RabbitMQ.Client.IConnectionFactory>(serviceProvider =>
 {
     string? connectionString = builder.Configuration.GetConnectionString("RabbitMQ");
