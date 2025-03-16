@@ -4,7 +4,6 @@ using NLog;
 using NLog.Web;
 using RabbitMQ.Client;
 using RabbitMqService.App.Abstractions;
-using RabbitMqService.Domain.options;
 using RabbitMqService.Infrastructure.RabbitMq;
 using Serilog;
 using System.Net.Http.Headers;
@@ -44,21 +43,27 @@ try
     builder.Services.AddScoped<IProducer, RabbitMqProducer>();
     builder.Services.AddScoped<IConsumer, RabbitMqConsumer>();
 
+
+
     builder.Services.AddSwaggerGen(c =>
     {
         c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
     });
 
-
     var app = builder.Build();
 
+    //app.Environment.EnvironmentName = "Test";
 
-    app.UseSwagger();
-
-    app.UseSwaggerUI(c =>
+    if (app.Environment.IsDevelopment())
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-    });
+        app.UseSwagger();
+
+        app.UseSwaggerUI(c =>
+        {
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+        });
+    }
+    
     app.MapControllers();
     app.Run();
 }

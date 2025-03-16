@@ -77,3 +77,5 @@ D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\NLog.dll
 D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\NLog.Extensions.Logging.dll
 D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\NLog.Web.AspNetCore.dll
 D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\nlog.config
+D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\appsettings.Production.json
+D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\appsettings.Test.json
