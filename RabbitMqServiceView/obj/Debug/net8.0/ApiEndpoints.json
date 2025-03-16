@@ -34,24 +34,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "message",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "exchangeName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "routingKey",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "queueName",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "request",
+        "Type": "RabbitMqService.Domain.models.PostMessageModel",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

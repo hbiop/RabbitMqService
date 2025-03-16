@@ -33,13 +33,8 @@ namespace RabbitMqService.Infrastructure.RabbitMq
                 ackmode = "ack_requeue_false",
                 encoding = "auto",
             };
-            string _basicAuthHeader = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{login}:{password}"));
             string json = JsonConvert.SerializeObject(requestData);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-            _httpClient.DefaultRequestHeaders.Authorization =
-                new AuthenticationHeaderValue("Basic", _basicAuthHeader);
-
             var response = await _httpClient.PostAsync(url, content);
             response.EnsureSuccessStatusCode();
             var responseContent = await response.Content.ReadAsStringAsync();

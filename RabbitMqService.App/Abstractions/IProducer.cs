@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RabbitMqService.Domain.models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace RabbitMqService.App.Abstractions
 {
     public interface IProducer
     {
-        Task<string> SendMessage(string message, string exchangeName, string routingKey, string queueName);
+        Task<string> SendMessage(PostMessageModel model);
     }
 }

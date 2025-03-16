@@ -280,6 +280,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "NLog": {
+              "target": "Package",
+              "version": "[5.4.0, )"
+            },
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[5.4.0, )"
+            },
             "RabbitMQ.Client": {
               "target": "Package",
               "version": "[7.1.1, )"

@@ -73,3 +73,7 @@ D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\Microsoft.Extension
 D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\RabbitMqService.Domain.dll
 D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\RabbitMqService.Domain.pdb
 D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\NLog.dll
+D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\NLog.Extensions.Logging.dll
+D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\NLog.Web.AspNetCore.dll
+D:\need\RabbitMqService\RabbitMqServiceView\bin\Debug\net8.0\nlog.config
