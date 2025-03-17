@@ -23,7 +23,7 @@ namespace RabbitMqService.Infrastructure.RabbitMq
         {
             _httpClient = httpClientFactory.CreateClient("RmqHttpClient");
         }
-        public async Task<GetMessagesReturnModel> GetMessage(string queueName, string login, string password, int count)
+        public async Task<GetMessagesReturnModel> GetMessage(string queueName, int count)
         {
             var url = $"/api/queues/%2F/{Uri.EscapeDataString(queueName)}/get";
             var requestData = new

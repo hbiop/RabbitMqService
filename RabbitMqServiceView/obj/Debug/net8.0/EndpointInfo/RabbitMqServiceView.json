@@ -60,25 +60,6 @@
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetMessagesModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetMessagesModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetMessagesModel"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -89,16 +70,17 @@
   },
   "components": {
     "schemas": {
-      "GetMessagesModel": {
+      "ModifiersModel": {
         "type": "object",
         "properties": {
-          "login": {
-            "type": "string",
-            "nullable": true
+          "durable": {
+            "type": "boolean"
           },
-          "password": {
-            "type": "string",
-            "nullable": true
+          "exclusive": {
+            "type": "boolean"
+          },
+          "auto_delete": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -114,11 +96,7 @@
             "nullable": true
           },
           "modifiers": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
+            "$ref": "#/components/schemas/ModifiersModel"
           }
         },
         "additionalProperties": false

@@ -17,11 +17,11 @@ namespace RabbitMqServiceView.Controllers
         private readonly IConsumer _consumer = consumer;
 
         [HttpPost]
-        public IActionResult SendMessage([FromBody] PostMessageModel request)
+        public async Task<IActionResult> SendMessage([FromBody] PostMessageModel request)
         {
             try
             {
-                string result = _producer.SendMessage(request).Result;
+                string result = await _producer.SendMessage(request);
                 _logger.LogInformation("Сообщение было отправлено");
                 return Ok(result);
             }
@@ -48,11 +48,11 @@ namespace RabbitMqServiceView.Controllers
         }
 
         [HttpPost]
-        public IActionResult GetMessage([FromBody] GetMessagesModel getMessages,string queueName = "default", int count=1)
+        public async Task<IActionResult> GetMessage(string queueName = "default", int count=1)
         {
             try
             {
-                var result = _consumer.GetMessage(queueName, getMessages.Login, getMessages.Password, count).Result;
+                var result = await _consumer.GetMessage(queueName, count);
                 _logger.LogInformation("Сообщение было отправлено");
                 return Ok(result);
             }

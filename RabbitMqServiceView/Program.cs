@@ -52,7 +52,7 @@ try
 
     var app = builder.Build();
 
-    //app.Environment.EnvironmentName = "Test";
+    app.Environment.EnvironmentName = "Development";
 
     if (app.Environment.IsDevelopment())
     {

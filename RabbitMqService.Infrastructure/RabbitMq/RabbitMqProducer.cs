@@ -21,16 +21,14 @@ namespace RabbitMqService.Infrastructure.RabbitMq
 
         public async Task<string> SendMessage(PostMessageModel model)
         {
-            var durable = model.Modifiers?.Contains("durable") ?? true;
-            var exclusive = model.Modifiers?.Contains("exclusive") ?? false;
-            var autoDelete = model.Modifiers?.Contains("auto_delete") ?? false;
+            var durable = model.Modifiers.durable;
+            var exclusive = model.Modifiers.exclusive;
+            var autoDelete = model.Modifiers.auto_delete;
             await using (var channel = await _connection.CreateChannelAsync())
             {
                 await channel.ExchangeDeclareAsync(
                     exchange: "my_exchange",
                     type: ExchangeType.Direct,
-                    durable: durable,
-                    autoDelete: autoDelete,
                     arguments: null
                 );
 

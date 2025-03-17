@@ -9,6 +9,6 @@ namespace RabbitMqService.App.Abstractions
 {
     public interface IConsumer
     {
-        Task<GetMessagesReturnModel> GetMessage(string queueName, string login, string password, int count);
+        Task<GetMessagesReturnModel> GetMessage(string queueName, int count);
     }
 }

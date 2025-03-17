@@ -8,11 +8,6 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "getMessages",
-        "Type": "RabbitMqService.Domain.models.GetMessagesModel",
-        "IsRequired": true
-      },
-      {
         "Name": "queueName",
         "Type": "System.String",
         "IsRequired": false
