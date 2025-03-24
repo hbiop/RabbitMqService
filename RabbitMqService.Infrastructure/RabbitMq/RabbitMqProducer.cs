@@ -1,4 +1,6 @@
-﻿using RabbitMQ.Client;
+﻿using Microsoft.Extensions.Logging;
+using RabbitMQ.Client;
+using RabbitMQ.Client.Exceptions;
 using RabbitMqService.App.Abstractions;
 using RabbitMqService.Domain.models;
 using System;
@@ -13,8 +15,9 @@ namespace RabbitMqService.Infrastructure.RabbitMq
     public class RabbitMqProducer : IProducer
     {
         private readonly IChannelPool _channelPool;
+        private readonly ILogger<RabbitMqProducer> logger;
 
-        public RabbitMqProducer(IChannelPool channelPool)
+        public RabbitMqProducer(IChannelPool channelPool, ILogger<RabbitMqProducer> logger)
         {
             _channelPool = channelPool;
         }
@@ -26,14 +29,30 @@ namespace RabbitMqService.Infrastructure.RabbitMq
             try
             {
                 byte[] messageBodyBytes = JsonSerializer.SerializeToUtf8Bytes(model.Message);
+                var properties = new BasicProperties
+                {
+                    Persistent = model.Modifiers.persistent
+                };
 
                 await channel.BasicPublishAsync(
                     exchange: "my_exchange",
                     routingKey: model.QueueName,
-                    body: messageBodyBytes
+                    body: messageBodyBytes,
+                    mandatory:true,
+                    basicProperties: properties
                 );
 
                 return "Сообщение успешно отправлено.";
+            }
+            catch (BrokerUnreachableException ex)
+            {
+                logger.LogError($"Ошибка соединения с RabbitMQ: {ex.Message}");
+                throw;
+            }
+            catch (Exception ex)
+            {
+                logger.LogError($"Произошла ошибка: {ex.Message}");
+                throw;
             }
             finally
             {

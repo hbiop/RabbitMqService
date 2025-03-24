@@ -8,8 +8,6 @@ namespace RabbitMqService.Domain.models
 {
     public class ModifiersModel
     {
-        public bool durable {  get; set; }
-        public bool exclusive { get; set; }
-        public bool auto_delete { get; set; }
+        public bool persistent {  get; set; }
     }
 }

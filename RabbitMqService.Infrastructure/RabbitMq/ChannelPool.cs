@@ -15,22 +15,21 @@ namespace RabbitMqService.Infrastructure.RabbitMq
     public class ChannelPool : IChannelPool
     {
         private readonly ConcurrentQueue<IChannel> _channels = new();
-        private readonly IConnection _connection;
+        private IConnection _connection;
+        private static App.Abstractions.IConnectionFactory _connectionFactory;
         private readonly int _poolSize;
+        private bool _isReconnecting = false;
 
-        public ChannelPool(int poolSize, IConnection connection)
+        public ChannelPool(int poolSize, App.Abstractions.IConnectionFactory connectionFactory)
         {
             _poolSize = poolSize;
-            _connection = connection;
+            _connectionFactory = connectionFactory;
             InitializePool();
         }
 
         private async void InitializePool()
         {
-            for (int i = 0; i < _poolSize; i++)
-            {
-                _channels.Enqueue(await _connection.CreateChannelAsync());
-            }
+            await ReconnectAsync();
         }
 
         public async Task<IChannel> GetChannelAsync()
@@ -39,6 +38,7 @@ namespace RabbitMqService.Infrastructure.RabbitMq
             {
                 return channel;
             }
+
             return await _connection.CreateChannelAsync();
         }
 
@@ -52,5 +52,33 @@ namespace RabbitMqService.Infrastructure.RabbitMq
             _channels.Enqueue(channel);
         }
 
+        public async Task ReconnectAsync()
+        {
+            if (_isReconnecting) return; 
+
+            _isReconnecting = true;
+            try
+            {
+                if (_connection != null)
+                {
+                    _connection.Dispose();
+                }
+
+                _connection = await _connectionFactory.GetConnection();
+                for (int i = 0; i < _poolSize; i++)
+                {
+                    _channels.Enqueue(await _connection.CreateChannelAsync());
+                }
+                Console.WriteLine("Успешное переподключение к RabbitMQ");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка при попытке переподключения: {ex.Message}");
+            }
+            finally
+            {
+                _isReconnecting = false;
+            }
+        }
     }
 }

@@ -11,6 +11,9 @@ using System.Net.Http;
 using System.Text;
 using RabbitMqServiceView.services;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using RabbitMqService.Domain.settings;
+using RabbitMqService.Infrastructure;
 
 
 var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
@@ -32,21 +35,13 @@ try
         client.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Basic", _basicAuthHeader);
     });
-    builder.Services.AddSingleton<RabbitMQ.Client.IConnection>(serviceProvider =>
-    {
-        string? connectionString = builder.Configuration.GetConnectionString("RabbitMQ");
-        var factory = new ConnectionFactory()
-        {
-            Uri = connectionString != null ? new Uri(connectionString) : throw new Exception("Строка подключения к RabbitMQ не найдена"),
-            ClientProvidedName = "RabbitMqService"
-        };
-        return factory.CreateConnectionAsync().Result;
-    });
+    builder.Services.Configure<RabbitMqSettings>(builder.Configuration.GetSection("RabbitMqSettings"));
+    builder.Services.AddSingleton<RabbitMqService.App.Abstractions.IConnectionFactory, RabbitMqConnectionFactory>();
     builder.Services.AddScoped<IProducer, RabbitMqProducer>();
     builder.Services.AddScoped<IConsumer, RabbitMqConsumer>();
     builder.Services.AddSingleton<IChannelPool>(serviceProvider =>
     {
-        var connection = serviceProvider.GetRequiredService<IConnection>();
+        var connection = serviceProvider.GetRequiredService<RabbitMqService.App.Abstractions.IConnectionFactory>();
         int poolSize = 10;
         return new ChannelPool(poolSize, connection);
     });

@@ -13,47 +13,66 @@ using RabbitMqService.App.Abstractions;
 
 namespace RabbitMqService.Infrastructure
 {
-    /*public class RabbitMqConnectionFactory : App.Abstractions.IConnectionFactory, IDisposable
+    public class RabbitMqConnectionFactory : App.Abstractions.IConnectionFactory
     {
+        private static IConnection _connection;
+        private static readonly object _lock = new object();
         private readonly RabbitMqSettings _settings;
-        private readonly ConnectionFactory _rabbitFactory;
-        private IConnection _connection;
-
-        public RabbitMqConnectionFactory(IOptions<RabbitMqSettings> settings)
+        ILogger<RabbitMqConnectionFactory> _logger;
+        public RabbitMqConnectionFactory(IOptions<RabbitMqSettings> settings, ILogger<RabbitMqConnectionFactory> logger)
         {
-            _rabbitFactory = new ConnectionFactory
-            {
-                Uri = new Uri(_settings.ConnectionString),
-                AutomaticRecoveryEnabled = true // Автовосстановление
-            };
+            _settings = settings.Value;
+            _logger = logger;
         }
 
-        public Task<IConnection> GetConnection()
+        public async Task<IConnection> GetConnection()
         {
-            if (_connection?.IsOpen == true)
+            if (_connection != null && _connection.IsOpen)
+            {
                 return _connection;
+            }
 
-            // Логика повторных попыток
+            lock (_lock)
+            {
+                if (_connection == null || !_connection.IsOpen)
+                {
+                    TryReconnectAsync().Wait();
+                }
+
+                return _connection;
+            }
+        }
+
+        private async Task TryReconnectAsync()
+        {
             int attempts = 0;
-            while (attempts < _settings.MaxRetryAttempts)
+
+            while (attempts < _settings.MaxReconnectAttempts)
             {
                 try
                 {
-                    _connection?.Dispose();
-                    _connection = await _rabbitFactory.CreateConnectionAsync();
-                    return _connection;
-                }
-                catch (BrokerUnreachableException ex)
-                {
-                    if (++attempts >= _settings.MaxRetryAttempts)
-                        throw new InvalidOperationException("Не удалось подключиться к RabbitMQ", ex);
+                    var factory = new RabbitMQ.Client.ConnectionFactory()
+                    {
+                        HostName = _settings.HostName,
+                        UserName = _settings.UserName,
+                        Password = _settings.Password
+                    };
 
-                    Thread.Sleep(_settings.RetryDelayMs);
+                    _connection = await factory.CreateConnectionAsync();
+                    break;
+                }
+                catch (Exception ex)
+                {
+                    attempts++;
+                    if (attempts >= _settings.MaxReconnectAttempts)
+                    {
+                        _logger.LogCritical("Не удалось установить соединение после нескольких попыток.");
+                        throw new Exception("Не удалось установить соединение после нескольких попыток.", ex);
+                    }
+
+                    await Task.Delay(_settings.ReconnectDelay);
                 }
             }
-            return _connection;
         }
-
-        public void Dispose() => _connection?.Close();
-    }*/
+    }
 }

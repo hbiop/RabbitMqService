@@ -9,7 +9,6 @@ namespace RabbitMqService.App.Abstractions
 {
     public interface IConnectionFactory
     {
-        IConnection GetConnection();
-        void Dispose();
+        Task<IConnection> GetConnection();
     }
 }

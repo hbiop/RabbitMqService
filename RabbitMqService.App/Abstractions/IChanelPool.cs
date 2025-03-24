@@ -11,5 +11,6 @@ namespace RabbitMqService.App.Abstractions
     {
         Task<IChannel> GetChannelAsync();
         void ReturnChannel(IChannel channel);
+        Task ReconnectAsync();
     }
 }
