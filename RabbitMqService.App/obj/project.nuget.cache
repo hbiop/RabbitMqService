@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "7a8VMy+vGTA=",
+  "dgSpecHash": "OZ9Dbz5i2xA=",
   "success": true,
   "projectFilePath": "D:\\need\\RabbitMqService\\RabbitMqService.App\\RabbitMqService.App.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\irina\\.nuget\\packages\\rabbitmq.client\\7.1.1\\rabbitmq.client.7.1.1.nupkg.sha512",
+    "C:\\Users\\irina\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
+    "C:\\Users\\irina\\.nuget\\packages\\system.threading.ratelimiting\\8.0.0\\system.threading.ratelimiting.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

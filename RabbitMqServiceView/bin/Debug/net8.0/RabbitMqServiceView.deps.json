@@ -470,6 +470,7 @@
       "System.Threading.RateLimiting/8.0.0": {},
       "RabbitMqService.App/1.0.0": {
         "dependencies": {
+          "RabbitMQ.Client": "7.1.1",
           "RabbitMqService.Domain": "1.0.0"
         },
         "runtime": {

@@ -12,39 +12,19 @@ namespace RabbitMqService.Infrastructure.RabbitMq
 {
     public class RabbitMqProducer : IProducer
     {
-        private IConnection _connection;
-        public RabbitMqProducer(IConnection connection)
-        {
-            _connection = connection;
-        }
+        private readonly IChannelPool _channelPool;
 
+        public RabbitMqProducer(IChannelPool channelPool)
+        {
+            _channelPool = channelPool;
+        }
 
         public async Task<string> SendMessage(PostMessageModel model)
         {
-            var durable = model.Modifiers.durable;
-            var exclusive = model.Modifiers.exclusive;
-            var autoDelete = model.Modifiers.auto_delete;
-            await using (var channel = await _connection.CreateChannelAsync())
+            var channel = await _channelPool.GetChannelAsync();
+
+            try
             {
-                await channel.ExchangeDeclareAsync(
-                    exchange: "my_exchange",
-                    type: ExchangeType.Direct,
-                    arguments: null
-                );
-
-                await channel.QueueDeclareAsync(
-                    queue: model.QueueName,
-                    durable: durable,
-                    exclusive: exclusive,
-                    autoDelete: autoDelete,
-                    arguments: null
-                );
-                await channel.QueueBindAsync(
-                    queue: model.QueueName,
-                    exchange: "my_exchange",
-                    routingKey: model.QueueName
-                );
-
                 byte[] messageBodyBytes = JsonSerializer.SerializeToUtf8Bytes(model.Message);
 
                 await channel.BasicPublishAsync(
@@ -54,6 +34,10 @@ namespace RabbitMqService.Infrastructure.RabbitMq
                 );
 
                 return "Сообщение успешно отправлено.";
+            }
+            finally
+            {
+                _channelPool.ReturnChannel(channel);
             }
         }
     }
