@@ -3,13 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35521.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqServiceView", "RabbitMqServiceView\RabbitMqServiceView.csproj", "{185855E8-B347-40A4-91A1-23FB8E817C69}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqService.App", "RabbitMqService.App\RabbitMqService.App.csproj", "{5169C63E-5825-4402-B758-2F055567D519}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqService.Infrastructure", "RabbitMqService.Infrastructure\RabbitMqService.Infrastructure.csproj", "{37319AE7-AA89-41FE-835F-B5E1A4BBDE81}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqService.Domain", "RabbitMqService.Domain\RabbitMqService.Domain.csproj", "{A64FFD46-F4AF-483D-BC8E-1765C07A08FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqService", "RabbitMqServiceView\RabbitMqService.csproj", "{185855E8-B347-40A4-91A1-23FB8E817C69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +15,6 @@ Global
 		{185855E8-B347-40A4-91A1-23FB8E817C69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{185855E8-B347-40A4-91A1-23FB8E817C69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{185855E8-B347-40A4-91A1-23FB8E817C69}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5169C63E-5825-4402-B758-2F055567D519}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5169C63E-5825-4402-B758-2F055567D519}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5169C63E-5825-4402-B758-2F055567D519}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5169C63E-5825-4402-B758-2F055567D519}.Release|Any CPU.Build.0 = Release|Any CPU
-		{37319AE7-AA89-41FE-835F-B5E1A4BBDE81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{37319AE7-AA89-41FE-835F-B5E1A4BBDE81}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{37319AE7-AA89-41FE-835F-B5E1A4BBDE81}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{37319AE7-AA89-41FE-835F-B5E1A4BBDE81}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A64FFD46-F4AF-483D-BC8E-1765C07A08FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A64FFD46-F4AF-483D-BC8E-1765C07A08FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A64FFD46-F4AF-483D-BC8E-1765C07A08FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A64FFD46-F4AF-483D-BC8E-1765C07A08FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

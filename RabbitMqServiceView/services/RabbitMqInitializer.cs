@@ -1,5 +1,4 @@
-﻿
-using RabbitMQ.Client;
+﻿using RabbitMQ.Client;
 using RabbitMqService.App.Abstractions;
 
 namespace RabbitMqServiceView.services
